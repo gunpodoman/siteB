@@ -19,9 +19,9 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { 
-            font-family: 'Pretendard', sans-serif; 
-            color: var(--text-dark); 
+        body {
+            font-family: 'Pretendard', sans-serif;
+            color: var(--text-dark);
             background: #fff;
             line-height: 1.5;
             -webkit-font-smoothing: antialiased;
@@ -31,7 +31,6 @@
         .hidden { display: none !important; }
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-        /* --- Header --- */
         header {
             border-bottom: 1px solid var(--border);
             padding: 15px 0;
@@ -45,22 +44,21 @@
             justify-content: space-between;
             align-items: center;
         }
-        .logo { 
-            font-size: 22px; 
-            font-weight: 800; 
-            color: var(--brand-color); 
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--brand-color);
             cursor: pointer;
             user-select: none;
             display: flex;
             align-items: center;
             gap: 6px;
         }
-        
+
         .nav-links { display: flex; gap: 30px; font-size: 14px; font-weight: 600; color: var(--text-gray); }
         .nav-links div { cursor: pointer; user-select: none; transition: color 0.2s; }
         .nav-links div.active { color: var(--brand-color); }
 
-        /* --- Main Content --- */
         .main-content { padding: 40px 0; }
         .product-grid {
             display: grid;
@@ -75,7 +73,6 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
 
-        /* --- Info Area --- */
         .badge-group { display: flex; gap: 6px; margin-bottom: 12px; }
         .badge { font-size: 11px; font-weight: 800; padding: 3px 8px; border-radius: 4px; }
         .badge-blue { background: var(--brand-color); color: #fff; }
@@ -95,7 +92,6 @@
         }
         .delivery-notice b { color: var(--brand-color); }
 
-        /* --- Options Area --- */
         .options-section { margin-top: 40px; }
         .options-grid {
             display: grid;
@@ -173,10 +169,9 @@
             cursor: pointer;
         }
 
-        /* --- My Page --- */
         #page-mypage { padding: 60px 0; }
         .mypage-header { font-size: 24px; font-weight: 800; margin-bottom: 30px; }
-        
+
         .subscription-status {
             border: 1px solid var(--border);
             padding: 30px;
@@ -199,7 +194,6 @@
             cursor: pointer;
         }
 
-        /* --- Dark Pattern Dialogs --- */
         .dialog-overlay {
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
@@ -218,8 +212,21 @@
             position: relative;
         }
         .dialog h3 { font-size: 20px; font-weight: 800; margin-bottom: 16px; color: var(--text-dark); }
-        .dialog p.scroll-text { font-size: 12px; color: #888; margin-bottom: 24px; text-align: left; background: #fafafa; padding: 15px; border-radius: 8px; height: 140px; overflow-y: scroll; border: 1px solid var(--border); white-space: pre-wrap; line-height: 1.6; }
-        
+        .dialog p.scroll-text {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 18px;
+            text-align: left;
+            background: #fafafa;
+            padding: 15px;
+            border-radius: 8px;
+            height: 140px;
+            overflow-y: scroll;
+            border: 1px solid var(--border);
+            white-space: pre-wrap;
+            line-height: 1.6;
+        }
+
         .dialog-btns { display: flex; flex-direction: column; gap: 10px; }
         .btn-keep { background: var(--brand-color); color: #fff; padding: 16px; border-radius: 8px; border: none; font-weight: 700; cursor: pointer; font-size: 16px; }
         .btn-next { background: transparent; color: #d1d5db; padding: 10px; border: none; font-size: 11px; cursor: pointer; text-decoration: underline; margin-top: 5px; }
@@ -228,182 +235,259 @@
         .evil-checkbox-area label { display: flex; align-items: flex-start; gap: 10px; font-size: 12px; cursor: pointer; margin-bottom: 8px; color: #4b5563; }
         .check-all-wrapper { display: flex; align-items: center; gap: 8px; padding-bottom: 12px; margin-bottom: 12px; border-bottom: 1px solid var(--border); font-weight: 800; font-size: 14px; color: var(--text-dark); }
 
-        /* 폭탄 알림 팝업 (리얼한 광고 디자인) */
-        .bomb-notice {
-            position: fixed;
-            width: 280px;
-            background: linear-gradient(135deg, #ffffff 0%, #f3f4f6 100%);
-            border: 1px solid #e2e8f0;
-            padding: 0;
-            border-radius: 16px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2), 0 5px 15px rgba(0,0,0,0.1);
-            z-index: 2000;
-            overflow: hidden;
-            animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            pointer-events: auto;
-        }
-
-        @keyframes popIn {
-            0% { transform: scale(0.5); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-
-        .ad-header {
-            background: #ff4757;
-            color: white;
-            padding: 10px;
-            font-size: 12px;
-            font-weight: 900;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .ad-body {
-            padding: 18px;
-            text-align: center;
-        }
-
-        .ad-body h4 { font-size: 16px; margin-bottom: 8px; color: #2f3542; }
-        .ad-body p { font-size: 12px; color: #747d8c; margin-bottom: 15px; line-height: 1.4; }
-        .ad-body .coupon-code {
-            display: block;
-            background: #f1f2f6;
-            border: 1px dashed #ff4757;
-            padding: 8px;
-            font-weight: 800;
-            color: #ff4757;
-            border-radius: 6px;
-            margin-bottom: 15px;
-        }
-
-        .ad-footer {
-            display: flex;
-            border-top: 1px solid #eee;
-        }
-
-        .ad-footer button {
-            flex: 1;
-            padding: 12px;
-            border: none;
-            background: transparent;
-            font-size: 12px;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .ad-footer .btn-claim { background: #ff4757; color: white; font-weight: 700; }
-        .ad-footer .btn-close { color: #a4b0be; }
-
-        /* 리다이렉트 연출 */
-        #redirect-screen {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: #000; color: #0f0;
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-            z-index: 9999; font-family: 'Courier New', monospace;
-        }
-
         #toast {
             position: fixed;
             bottom: 30px; left: 50%; transform: translateX(-50%);
             background: rgba(17, 24, 39, 0.95); color: #fff; padding: 14px 28px; border-radius: 50px;
             opacity: 0; transition: 0.3s; z-index: 3000; font-size: 14px; font-weight: 600;
         }
+
+        /* ===== 고객센터 페이지 ===== */
+        #page-support { padding: 60px 0; }
+        .support-title { font-size: 24px; font-weight: 800; margin-bottom: 18px; }
+        .support-card {
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 16px;
+            background: #fff;
+        }
+        .support-card h3 { font-size: 18px; font-weight: 800; margin-bottom: 8px; }
+        .support-card p { font-size: 14px; color: var(--text-gray); line-height: 1.7; }
+        .support-actions { margin-top: 18px; display: flex; flex-direction: column; gap: 10px; max-width: 360px; }
+        .btn-support-primary {
+            background: var(--brand-color);
+            color: #fff;
+            padding: 14px 16px;
+            border-radius: 10px;
+            border: none;
+            font-weight: 800;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .btn-support-secondary {
+            background: var(--bg-gray);
+            border: 1px solid var(--border);
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            color: var(--text-gray);
+            font-size: 13px;
+        }
+        .support-verified {
+            margin-top: 18px;
+            padding: 14px;
+            border-radius: 12px;
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            color: #166534;
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .mini-input {
+            width: 100%;
+            padding: 14px 12px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-size: 14px;
+            outline: none;
+        }
+        .mini-input:focus { border-color: #93c5fd; box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12); }
+
+        /* ===== 추가 옵션 해지 안내 팝업(옵션 선택 시점) ===== */
+        .dialog-close-x {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: #fff;
+            cursor: pointer;
+            color: #9ca3af;
+            font-weight: 900;
+            line-height: 1;
+        }
+        .dialog-close-x:hover { color: #6b7280; }
+
+        /* === [수정] 안내 팝업 텍스트를 더 컴팩트하게 === */
+        .guide-scroll {
+            text-align: left;
+            background: #fafafa;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+
+            padding: 14px;
+            height: 240px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+
+            line-height: 1.35;
+            font-size: 12px;
+            color: #6b7280;
+        }
+        .guide-scroll::-webkit-scrollbar { width: 0; height: 0; }
+        .guide-scroll { scrollbar-width: none; -ms-overflow-style: none; }
+
+        .guide-inline-btn {
+            margin-top: 14px;
+            width: 100%;
+            background: var(--brand-color);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 14px 16px;
+            font-weight: 800;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .guide-inline-sub {
+            margin-top: 10px;
+            text-align: center;
+            font-size: 12px;
+            color: #cbd5e1;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .guide-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 10px 0;
+        }
+
+        .guide-spacer { height: 140px; }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="container header-inner">
-            <div class="logo" onclick="showPage('main')">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-                siteB
-            </div>
-            <div class="nav-links">
-                <div id="nav-main" class="active" onclick="showPage('main')">전체 상품</div>
-                <div id="nav-mypage" onclick="showPage('mypage')">마이페이지</div>
-            </div>
-            <div style="width: 24px;"></div>
+<header>
+    <div class="container header-inner">
+        <div class="logo" onclick="showPage('main')">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            siteB
         </div>
-    </header>
+        <div class="nav-links">
+            <div id="nav-main" class="active" onclick="showPage('main')">전체 상품</div>
+            <div id="nav-mypage" onclick="showPage('mypage')">마이페이지</div>
+        </div>
+        <div style="width: 24px;"></div>
+    </div>
+</header>
 
-    <main id="page-main" class="container main-content">
-        <div class="product-grid">
-            <div class="product-image-area">
-                <img src="sample.png">
+<main id="page-main" class="container main-content">
+    <div class="product-grid">
+        <div class="product-image-area">
+            <img src="sample.png" alt="product">
+        </div>
+        <div class="product-info-area">
+            <div class="badge-group">
+                <span class="badge badge-blue">PREMIUM</span>
+                <span class="badge badge-gray">LIMITED</span>
             </div>
-            <div class="product-info-area">
-                <div class="badge-group">
-                    <span class="badge badge-blue">PREMIUM</span>
-                    <span class="badge badge-gray">LIMITED</span>
-                </div>
-                <h1 class="product-title">엑스퍼트 에너지 솔루션</h1>
-                <div class="rating">
-                    <span class="stars">★★★★★</span>
-                    <span class="count">5.0 | 만족도 100%</span>
-                </div>
-                <div class="delivery-notice">
-                    ⚡ <b>프리미엄 로켓 배송</b> (지금 주문 시 오늘 출발)
-                </div>
-                <p style="color: var(--text-gray); font-size: 15px; margin-bottom: 40px; line-height: 1.7;">
-                    업계 최고의 성분 함량. 전담 케어 서비스 포함. <br>
-                    <b>siteB 프리미엄 유저 멤버십</b> 혜택이 모든 결제에 기본 포함됩니다.
-                </p>
-                <div class="options-section">
-                    <div class="options-grid">
-                        <div class="opt-card" id="opt-1" onclick="selectOption(1)">
-                            <div class="check-mark">✓</div>
-                            <div>
-                                <h4>개별 구매</h4>
-                                <div class="price">22,000원</div>
-                            </div>
-                        </div>
-                        <div class="opt-card selected" id="opt-2" onclick="selectOption(2)">
-                            <div class="badge-rec">베스트</div>
-                            <div class="check-mark">✓</div>
-                            <div>
-                                <h4>정기 구독</h4>
-                                <div class="price">19,900원</div>
-                            </div>
-                        </div>
-                        <div class="opt-card" id="opt-3" onclick="selectOption(3)">
-                            <div class="check-mark">✓</div>
-                            <div>
-                                <h4>마스터 패키지</h4>
-                                <div class="price">17,500원</div>
-                            </div>
+            <h1 class="product-title">엑스퍼트 에너지 솔루션</h1>
+            <div class="rating">
+                <span class="stars">★★★★★</span>
+                <span class="count">5.0 | 만족도 100%</span>
+            </div>
+            <div class="delivery-notice">
+                ⚡ <b>프리미엄 로켓 배송</b> (지금 주문 시 오늘 출발)
+            </div>
+            <p style="color: var(--text-gray); font-size: 15px; margin-bottom: 40px; line-height: 1.7;">
+                업계 최고의 성분 함량. 전담 케어 서비스 포함. <br>
+                <b>siteB 프리미엄 유저 멤버십</b> 혜택이 모든 결제에 기본 포함됩니다.
+            </p>
+
+            <div class="options-section">
+                <div class="options-grid">
+                    <div class="opt-card" id="opt-1" onclick="selectOption(1)">
+                        <div class="check-mark">✓</div>
+                        <div>
+                            <h4>개별 구매</h4>
+                            <div class="price">22,000원</div>
                         </div>
                     </div>
-                    <button class="btn-buy" onclick="handlePurchase()">혜택 받고 결제하기</button>
+                    <div class="opt-card selected" id="opt-2" onclick="selectOption(2)">
+                        <div class="badge-rec">베스트</div>
+                        <div class="check-mark">✓</div>
+                        <div>
+                            <h4>정기 구독</h4>
+                            <div class="price">19,900원</div>
+                        </div>
+                    </div>
+                    <div class="opt-card" id="opt-3" onclick="selectOption(3)">
+                        <div class="check-mark">✓</div>
+                        <div>
+                            <h4>마스터 패키지</h4>
+                            <div class="price">17,500원</div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </main>
 
-    <main id="page-mypage" class="container hidden">
-        <h2 class="mypage-header">마이페이지</h2>
-        <div id="sub-empty" class="subscription-status">
-            <div class="status-info">
-                <h3>가입된 멤버십이 없습니다.</h3>
-                <p>프리미엄 상품을 구매하고 차별화된 혜택을 누려보세요.</p>
+                <button class="btn-buy" onclick="handlePurchase()">혜택 받고 결제하기</button>
             </div>
-            <button class="btn-cancel" onclick="showPage('main')">상품 보러가기</button>
         </div>
-        <div id="sub-active" class="subscription-status hidden">
-            <div class="status-info">
-                <p style="color: var(--brand-color); font-weight: 700; font-size: 12px; margin-bottom: 5px;">ACTIVE</p>
-                <h3>siteB 프리미엄 유저 멤버십</h3>
-                <p>다음 갱신일: 2026년 01월 22일 (정기 결제 예정)</p>
-            </div>
-            <button class="btn-cancel" onclick="startCancelLoop()">멤버십 관리</button>
-        </div>
-    </main>
+    </div>
+</main>
 
-    <div id="cancel-overlay" class="dialog-overlay hidden">
-        <div id="step-1" class="dialog">
-            <h3>해지 신청 전 유의사항</h3>
-            <p class="scroll-text">
+<main id="page-mypage" class="container hidden">
+    <h2 class="mypage-header">마이페이지</h2>
+
+    <div id="sub-empty" class="subscription-status">
+        <div class="status-info">
+            <h3>가입된 멤버십이 없습니다.</h3>
+            <p>프리미엄 상품을 구매하고 차별화된 혜택을 누려보세요.</p>
+        </div>
+        <button class="btn-cancel" onclick="showPage('main')">상품 보러가기</button>
+    </div>
+
+    <div id="sub-active" class="subscription-status hidden">
+        <div class="status-info">
+            <p style="color: var(--brand-color); font-weight: 700; font-size: 12px; margin-bottom: 5px;">ACTIVE</p>
+            <h3>siteB 프리미엄 유저 멤버십</h3>
+            <p>다음 갱신일: 2026년 01월 22일 (정기 결제 예정)</p>
+        </div>
+        <button class="btn-cancel" onclick="startCancelLoop()">멤버십 관리</button>
+    </div>
+
+    <div class="subscription-status" style="margin-top: 18px;">
+        <div class="status-info">
+            <h3>누적 결제 금액</h3>
+            <p id="total-paid">0원</p>
+        </div>
+        <div style="width: 1px;"></div>
+    </div>
+</main>
+
+<main id="page-support" class="container hidden">
+    <h2 class="support-title">고객센터</h2>
+    <div class="support-card">
+        <h3>본인 확인 안내</h3>
+        <p>
+            멤버십 해지를 완료하려면 전화번호 인증이 필요합니다.<br>
+            아래 절차를 진행하시면 해지 버튼이 활성화됩니다.
+        </p>
+
+        <div class="support-actions">
+            <button class="btn-support-primary" onclick="openPhoneVerify()">전화번호 인증 진행</button>
+            <button class="btn-support-secondary" onclick="showPage('mypage')">마이페이지로 돌아가기</button>
+        </div>
+
+        <div id="support-verified" class="support-verified hidden">
+            인증이 완료되었습니다. 아래 버튼으로 멤버십 해지를 완료할 수 있습니다.
+            <div style="margin-top: 12px;">
+                <button class="btn-support-primary" onclick="finalizeCancel()">멤버십 해지 완료</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<div id="cancel-overlay" class="dialog-overlay hidden">
+    <div id="step-1" class="dialog">
+        <h3>해지 신청 전 유의사항</h3>
+        <p class="scroll-text">
 제 1조 [해지 효력] 해지 신청 시 즉시 모든 멤버십 혜택(할인, 배송, 적립)은 정지됩니다.
 제 2조 [포인트 환수] 멤버십 가입 기간 중 발생한 추가 적립금 및 쿠폰은 해지 즉시 전액 소멸되며 복구가 불가능합니다.
 제 3조 [재가입 제한] 서비스 남용 방지를 위해 해지 후 180일간 프로모션 가입이 원천 차단됩니다.
@@ -414,243 +498,491 @@
 제 8조 [데이터 삭제] 맞춤형 건강 진단 데이터 및 분석 리포트 열람 권한이 즉시 회수됩니다.
 제 9조 [고객지원] 멤버십 해지 고객은 VIP 전담 상담 센터 이용이 제한되며 일반 상담 대기열로 배치됩니다.
 제 10조 [제휴 혜택] 외부 제휴사를 통해 제공받던 OTT, 클라우드 서비스 등도 즉시 연동 해제됩니다.
-            </p>
-            <div class="evil-checkbox-area">
-                <div class="check-all-wrapper">
-                    <input type="checkbox" id="check-all" onchange="toggleAll(this)">
-                    <label for="check-all">전체 약관 및 유의사항에 모두 동의합니다.</label>
-                </div>
-                <label><input type="checkbox" class="evil-chk" data-required="true" onchange="updateMasterCheck()"> (필수) 위약금 발생 가능성 및 포인트 전액 소멸에 동의</label>
-                <label><input type="checkbox" class="evil-chk" data-required="true" onchange="updateMasterCheck()"> (필수) 해지 즉시 모든 유료 서비스 이용 권한 상실 동의</label>
-                <label><input type="checkbox" class="evil-chk" data-attack="true" onchange="updateMasterCheck()"> (선택) 맞춤형 건강 정보 및 프리미엄 특가 알림 수신 동의</label>
-                <label><input type="checkbox" class="evil-chk" data-attack="true" onchange="updateMasterCheck()"> (선택) 제3자 마케팅 대행사 개인정보 제공 및 활용 동의</label>
-                <label><input type="checkbox" class="evil-chk" data-attack="true" onchange="updateMasterCheck()"> (선택) 장기 미접속 시 서비스 유지 안내 문자 수신 동의</label>
-            </div>
-            <div class="dialog-btns">
-                <button class="btn-keep" onclick="closeCancel()">혜택 유지하고 계속 이용하기</button>
-                <button class="btn-next" onclick="validateStep1()">해지 계속 진행</button>
-            </div>
-        </div>
+        </p>
 
-        <div id="step-2" class="dialog hidden">
-            <h3 style="color:var(--danger)">잠깐만요! 정말 떠나시겠어요?</h3>
-            <div style="background:#fff7ed; padding:20px; border-radius:12px; margin-bottom:20px; font-size:15px; border:1px solid #ffedd5; line-height:1.6; text-align: left;">
-                지금 취소하시면 <b>매달 결제금액의 70%</b>를 <br>평생 할인받을 수 있는 기회를 다시는 얻을 수 없습니다. <br>
-                <span style="font-size:12px; color:#9a3412;">(현재까지 총 43,275명의 고객 분들이 멤버십 혜택을 받으셨습니다)</span>
+        <div class="evil-checkbox-area">
+            <div class="check-all-wrapper">
+                <input type="checkbox" id="check-all" onchange="toggleAll(this)">
+                <label for="check-all">전체 약관 및 유의사항에 모두 동의합니다.</label>
             </div>
-            <div class="dialog-btns">
-                <button class="btn-keep" onclick="closeCancel()">70% 평생 할인 혜택 받고 유지하기</button>
-                <button class="btn-next" onclick="nextStep(3)">혜택 포기하고 계속 해지</button>
-            </div>
+            <label><input type="checkbox" class="evil-chk" data-required="true" onchange="updateMasterCheck()"> (필수) 위약금 발생 가능성 및 포인트 전액 소멸에 동의</label>
+            <label><input type="checkbox" class="evil-chk" data-required="true" onchange="updateMasterCheck()"> (필수) 해지 즉시 모든 유료 서비스 이용 권한 상실 동의</label>
+            <label><input type="checkbox" class="evil-chk" data-attack="true" onchange="updateMasterCheck()"> (선택) 맞춤형 건강 정보 및 프리미엄 특가 알림 수신 동의</label>
+            <label><input type="checkbox" class="evil-chk" data-attack="true" onchange="updateMasterCheck()"> (선택) 제3자 마케팅 대행사 개인정보 제공 및 활용 동의</label>
+            <label><input type="checkbox" class="evil-chk" data-attack="true" onchange="updateMasterCheck()"> (선택) 장기 미접속 시 서비스 유지 안내 문자 수신 동의</label>
         </div>
-
-        <div id="step-3" class="dialog hidden">
-            <div style="font-size: 40px; margin-bottom: 15px;">🔒</div>
-            <h3>시스템 보안 인증 중</h3>
-            <p style="text-align: center; font-size:14px; color:#666; background:none; height:auto; padding:0;">
-                현재 다수의 해지 요청으로 인해 인증 트래픽이 집중되고 있습니다. <br>
-                안전한 해지 처리를 위해 <b>보안 세션 승인</b> 절차를 진행합니다.
-            </p>
-            <div class="dialog-btns" style="margin-top:25px;">
-                <button class="btn-keep" onclick="triggerSequentialRedirect()">보안 서버 연결 및 해지 인증</button>
-                <button class="btn-next" onclick="resetCancel()">메인으로 돌아가기</button>
-            </div>
+        <div class="dialog-btns">
+            <button class="btn-keep" onclick="closeCancel()">혜택 유지하고 계속 이용하기</button>
+            <button class="btn-next" onclick="validateStep1()">해지 계속 진행</button>
         </div>
     </div>
 
-    <div id="redirect-screen" class="hidden">
-        <h2 id="redirect-status">AUTHORIZING SYSTEM ACCESS...</h2>
-        <div id="console-log" style="margin-top:20px; text-align: left; width: 400px; font-size: 13px; opacity: 0.8; height: 180px; overflow: hidden; line-height: 1.5;"></div>
+    <div id="step-2" class="dialog hidden">
+        <h3 style="color:var(--danger)">잠깐만요! 정말 떠나시겠어요?</h3>
+        <div style="background:#fff7ed; padding:20px; border-radius:12px; margin-bottom:20px; font-size:15px; border:1px solid #ffedd5; line-height:1.6; text-align: left;">
+            지금 취소하시면 <b>매달 결제금액의 70%</b>를 <br>평생 할인받을 수 있는 기회를 다시는 얻을 수 없습니다. <br>
+            <span style="font-size:12px; color:#9a3412;">(현재까지 총 43,275명의 고객 분들이 멤버십 혜택을 받으셨습니다)</span>
+        </div>
+        <div class="dialog-btns">
+            <button class="btn-keep" onclick="closeCancel()">70% 평생 할인 혜택 받고 유지하기</button>
+            <button class="btn-next" onclick="nextStep(3)">혜택 포기하고 계속 해지</button>
+        </div>
     </div>
 
-    <div id="toast"></div>
+    <div id="step-3" class="dialog hidden">
+        <div style="font-size: 40px; margin-bottom: 15px;">🔒</div>
+        <h3>시스템 보안 인증 중</h3>
+        <p style="text-align: center; font-size:14px; color:#666; background:none; height:auto; padding:0;">
+            현재 다수의 해지 요청으로 인해 인증 트래픽이 집중되고 있습니다. <br>
+            안전한 해지 처리를 위해 <b>고객센터 인증</b> 절차를 진행합니다.
+        </p>
+        <div class="dialog-btns" style="margin-top:25px;">
+            <button class="btn-keep" onclick="goSupport()">고객센터로 이동하여 인증</button>
+            <button class="btn-next" onclick="resetCancel()">메인으로 돌아가기</button>
+        </div>
+    </div>
+</div>
 
-    <script>
-        let isSubscribed = false;
-        let scenarioIndex = 0;
+<div id="upsell-overlay" class="dialog-overlay hidden">
+    <div class="dialog">
+        <h3>잠깐만요, 더 나은 선택이 있습니다</h3>
+        <p style="font-size: 13px; color:#6b7280; line-height: 1.7; margin-bottom: 18px; text-align:left;">
+            정기 구독을 선택하시면 기본 혜택이 포함되고, 관리 서비스가 제공됩니다.<br>
+            가능한 경우 <b>정기 구독(베스트)</b> 선택을 권장드립니다.
+        </p>
+        <div class="dialog-btns">
+            <button class="btn-keep" onclick="confirmUpsellToSub()">정기 구독으로 변경하기</button>
+            <button class="btn-next" onclick="confirmUpsellKeepCurrent()">그래도 이 옵션으로 진행</button>
+        </div>
+    </div>
+</div>
 
-        function selectOption(num) {
-            document.querySelectorAll('.opt-card').forEach(card => card.classList.remove('selected'));
-            document.getElementById('opt-' + num).classList.add('selected');
+<div id="addon-guide-overlay" class="dialog-overlay hidden">
+    <div class="dialog">
+        <button class="dialog-close-x" onclick="closeAddonGuide()" aria-label="닫기">✕</button>
+        <h3>정기 구독 전용 프리미엄 안내</h3>
+
+        <div class="guide-scroll" id="addon-guide-scroll">
+            <div style="font-weight:900; color: var(--text-dark); margin-bottom:-80px; font-size:0px;">
+            </div>
+            <div style="font-weight:900; color: var(--text-dark); margin-bottom:-40px; font-size:13px;">
+                오늘부터 달라지는 ‘엑스퍼트 에너지’ 체감 케어
+            </div>
+            <div>
+                하루 한 포로 시작하는 프리미엄 루틴입니다.<br>
+                바쁜 날에도 <b style="color:var(--text-dark);">집중력·컨디션·에너지 밸런스</b>를 한 번에 끌어올리는 듯한
+                “즉시 체감형” 포뮬러로 설계되었습니다.
+
+                <b style="color:var(--text-dark);">정기 구독</b>을 선택하시면<br>
+                - 매달 최적 타이밍에 맞춰 자동 배송됩니다.
+                - 관리 서비스가 기본 포함되어 루틴이 끊기지 않습니다.
+                - 프리미엄 유저 전용 혜택이 자동 적용됩니다.<br><br>
+
+                지금 시작한 고객들은 “아침이 다르다”, “피로가 덜 쌓인다”,<br>
+                “하루가 더 길어졌다”는 후기를 남기고 있습니다.<br>
+                정기 구독으로 <b style="color:var(--text-dark);">최상의 컨디션 흐름</b>을 유지해 보시기 바랍니다.
+            </div>
+
+            <div class="guide-divider"></div>
+
+            <div style="font-weight:900; color: var(--text-dark); margin-bottom:0px; font-size:13px;">
+                추가 옵션 해지 절차
+            </div>
+            <div>
+                1) 아래 버튼을 눌러 해지 안내를 확인합니다.<br>
+                2) 필수 확인 항목(2개)에 체크합니다.<br>
+                3) 마지막 입력칸에 ‘해제’라고 정확히 입력하면 해지가 완료됩니다.<br><br>
+
+                <b style="color: var(--text-dark);">유의사항</b><br>
+                - 해지 완료 후에는 추가 옵션 비용이 더 이상 합산되지 않습니다.<br>
+                - 오입력 시 해지가 진행되지 않습니다.<br>
+                - 해지는 멤버십(정기 구독) 해지와 별개로 동작합니다.<br>
+            </div>
+
+            <button class="guide-inline-btn" onclick="startAddonRemovalFromGuide()">추가 옵션 해지 절차 시작</button>
+            <div class="guide-inline-sub" onclick="closeAddonGuide()">나중에 보기</div>
+        </div>
+    </div>
+</div>
+
+<div id="addon-overlay" class="dialog-overlay hidden">
+    <div id="addon-step-1" class="dialog">
+        <h3>추가 옵션 해제 전 확인</h3>
+        <p class="scroll-text">
+추가 옵션은 정기 구독 고객 전용으로 제공되는 서비스입니다.
+해제 시 일부 안내 및 지원 범위가 제한될 수 있으며, 해제 이후 동일 조건으로 재적용이 지연될 수 있습니다.
+
+해제를 진행하려면 아래 확인 절차를 완료해야 합니다.
+        </p>
+
+        <div class="evil-checkbox-area">
+            <div class="check-all-wrapper" style="border-bottom:none; margin-bottom: 0; padding-bottom: 0;">
+                <span style="font-size: 14px;">해제 확인 체크</span>
+            </div>
+            <label><input type="checkbox" id="addon-chk-1"> (필수) 해제 시 혜택 일부 제한 가능성을 이해했습니다</label>
+            <label><input type="checkbox" id="addon-chk-2"> (필수) 해제 후 재적용이 지연될 수 있음을 이해했습니다</label>
+            <label><input type="checkbox" id="addon-chk-3"> (선택) 해제 관련 안내를 문자로 받겠습니다</label>
+        </div>
+
+        <div class="dialog-btns">
+            <button class="btn-keep" onclick="goAddonStep2()">해제 계속 진행</button>
+            <button class="btn-next" onclick="closeAddonOverlay()">그냥 유지하기</button>
+        </div>
+    </div>
+
+    <div id="addon-step-2" class="dialog hidden">
+        <h3 style="color: var(--danger);">마지막 확인</h3>
+        <p style="font-size: 13px; color:#6b7280; line-height: 1.7; margin-bottom: 14px; text-align:left;">
+            해제를 완료하려면 아래 입력칸에 <b>해제</b>라고 정확히 입력해 주세요.
+        </p>
+        <input id="addon-confirm-text" class="mini-input" placeholder="여기에 '해제' 입력" autocomplete="off" />
+        <div class="dialog-btns" style="margin-top: 14px;">
+            <button class="btn-keep" onclick="confirmAddonRemoval()">해제 완료</button>
+            <button class="btn-next" onclick="closeAddonOverlay()">취소</button>
+        </div>
+    </div>
+</div>
+
+<div id="phone-overlay" class="dialog-overlay hidden">
+    <div class="dialog">
+        <h3>전화번호 인증</h3>
+        <p style="font-size: 13px; color:#6b7280; line-height: 1.7; margin-bottom: 14px; text-align:left;">
+            해지 처리를 위해 전화번호를 입력하고 인증을 진행해 주세요.
+        </p>
+        <input id="phone-input" class="mini-input" placeholder="전화번호 입력(숫자만)" inputmode="numeric" autocomplete="off" />
+        <div class="dialog-btns" style="margin-top: 14px;">
+            <button class="btn-keep" onclick="verifyPhone()">인증하기</button>
+            <button class="btn-next" onclick="closePhoneVerify()">닫기</button>
+        </div>
+    </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+    // ===== 새로고침 시 초기화: 저장소(localStorage/sessionStorage) 사용하지 않음 =====
+
+    let isSubscribed = false;
+
+    let selectedOption = 2;
+    let pendingOptionAfterUpsell = null;
+
+    // 정기 구독(2번) 결제 시 자동 합산 상태(메인 비노출)
+    let addonActive = true;
+
+    // 마지막 구매 플랜
+    let planPurchased = 2;
+
+    // “누적 결제 금액” 표시값: 누적하지 않고 마지막 결제 금액만 표시
+    let displayPaid = 0;
+
+    // 해지 인증 상태
+    let cancelVerified = false;
+
+    function formatWon(n) {
+        try { return n.toLocaleString('ko-KR') + "원"; }
+        catch(e) { return String(n) + "원"; }
+    }
+
+    function showPage(pageId) {
+        document.getElementById('page-main').classList.add('hidden');
+        document.getElementById('page-mypage').classList.add('hidden');
+        document.getElementById('page-support').classList.add('hidden');
+
+        const target = document.getElementById('page-' + pageId);
+        if (target) target.classList.remove('hidden');
+
+        document.getElementById('nav-main').classList.remove('active');
+        document.getElementById('nav-mypage').classList.remove('active');
+
+        if(pageId === 'main') document.getElementById('nav-main').classList.add('active');
+        if(pageId === 'mypage') {
+            document.getElementById('nav-mypage').classList.add('active');
+            updateMypageUI();
+        }
+    }
+
+    function updateMypageUI() {
+        if(isSubscribed) {
+            document.getElementById('sub-empty').classList.add('hidden');
+            document.getElementById('sub-active').classList.remove('hidden');
+        } else {
+            document.getElementById('sub-empty').classList.remove('hidden');
+            document.getElementById('sub-active').classList.add('hidden');
         }
 
-        function showPage(pageId) {
-            document.getElementById('page-main').classList.add('hidden');
-            document.getElementById('page-mypage').classList.add('hidden');
-            document.getElementById('page-' + pageId).classList.remove('hidden');
+        document.getElementById("total-paid").innerText = formatWon(displayPaid);
+    }
 
-            document.getElementById('nav-main').classList.remove('active');
-            document.getElementById('nav-mypage').classList.remove('active');
-            if(pageId === 'main') document.getElementById('nav-main').classList.add('active');
-            if(pageId === 'mypage') {
-                document.getElementById('nav-mypage').classList.add('active');
-                updateMypageUI();
+    function actuallySelectOption(num) {
+        selectedOption = num;
+        document.querySelectorAll('.opt-card').forEach(card => card.classList.remove('selected'));
+        document.getElementById('opt-' + num).classList.add('selected');
+    }
+
+    function selectOption(num) {
+        if (num === 1 || num === 3) {
+            pendingOptionAfterUpsell = num;
+            openUpsellOverlay();
+            return;
+        }
+
+        // 2번을 직접 클릭했을 때만 안내 팝업을 띄움
+        addonActive = true;
+        actuallySelectOption(2);
+        openAddonGuide();
+    }
+
+    function openUpsellOverlay() {
+        document.getElementById("upsell-overlay").classList.remove("hidden");
+    }
+    function closeUpsellOverlay() {
+        document.getElementById("upsell-overlay").classList.add("hidden");
+    }
+
+    // ✅ [수정] 업셀에서 "정기 구독으로 변경하기"를 눌렀을 때는
+    // 추가 옵션 안내창(openAddonGuide)을 띄우지 않음
+    function confirmUpsellToSub() {
+        closeUpsellOverlay();
+        addonActive = true;
+        actuallySelectOption(2);
+        showToast("정기 구독(베스트) 옵션으로 변경되었습니다.");
+        // openAddonGuide();  // 제거
+    }
+
+    function confirmUpsellKeepCurrent() {
+        const num = pendingOptionAfterUpsell || 1;
+        closeUpsellOverlay();
+        actuallySelectOption(num);
+        showToast("선택하신 옵션으로 진행합니다.");
+    }
+
+    function getSelectedPrice() {
+        if (selectedOption === 1) return 22000;
+        if (selectedOption === 2) return 19900;
+        if (selectedOption === 3) return 17500;
+        return 0;
+    }
+
+    function handlePurchase() {
+        const base = getSelectedPrice();
+        let extra = 0;
+
+        // 정기 구독(2번)만 자동 합산(메인 비노출)
+        if (selectedOption === 2 && addonActive) extra = 1500;
+
+        const paid = base + extra;
+        displayPaid = paid;
+
+        isSubscribed = true;
+        planPurchased = selectedOption;
+
+        showToast("결제가 정상 처리되었습니다.");
+        setTimeout(() => showPage('mypage'), 800);
+    }
+
+    function startCancelLoop() {
+        cancelVerified = false;
+        document.getElementById('support-verified').classList.add('hidden');
+
+        const sb = document.querySelector("#step-1 .scroll-text");
+        if (sb) sb.scrollTop = 0;
+
+        document.getElementById('cancel-overlay').classList.remove('hidden');
+        nextStep(1);
+    }
+
+    function nextStep(n) {
+        document.querySelectorAll('#cancel-overlay .dialog').forEach(d => d.classList.add('hidden'));
+        document.getElementById('step-' + n).classList.remove('hidden');
+    }
+
+    function closeCancel() {
+        document.getElementById('cancel-overlay').classList.add('hidden');
+        showToast("멤버십 혜택이 정상 유지되었습니다.");
+    }
+
+    function resetCancel() {
+        showToast("세션 만료로 인해 해지 신청이 취소되었습니다.");
+        nextStep(1);
+        const sb = document.querySelector("#step-1 .scroll-text");
+        if (sb) sb.scrollTop = 0;
+    }
+
+    function toggleAll(master) {
+        const chks = document.querySelectorAll('.evil-chk');
+        chks.forEach(chk => { chk.checked = master.checked; });
+        updateMasterCheck();
+    }
+
+    function updateMasterCheck() {
+        const master = document.getElementById('check-all');
+        const chks = document.querySelectorAll('.evil-chk');
+        const allChecked = Array.from(chks).every(c => c.checked);
+        master.checked = allChecked;
+    }
+
+    function validateStep1() {
+        const required = document.querySelectorAll('.evil-chk[data-required="true"]');
+        let allRequiredChecked = true;
+        required.forEach(chk => { if(!chk.checked) allRequiredChecked = false; });
+
+        if(!allRequiredChecked) {
+            showToast("모든 필수 유의사항에 동의하셔야 해지가 가능합니다.");
+            return;
+        }
+
+        const attackChks = document.querySelectorAll('.evil-chk[data-attack="true"]');
+        let anyAttackChecked = false;
+        attackChks.forEach(chk => { if(chk.checked) anyAttackChecked = true; });
+
+        if(anyAttackChecked) {
+            for(let i=0; i<5; i++) {
+                setTimeout(() => createAdBombNotice(), i * 120);
             }
         }
+        nextStep(2);
+    }
 
-        function updateMypageUI() {
-            if(isSubscribed) {
-                document.getElementById('sub-empty').classList.add('hidden');
-                document.getElementById('sub-active').classList.remove('hidden');
-            } else {
-                document.getElementById('sub-empty').classList.remove('hidden');
-                document.getElementById('sub-active').classList.add('hidden');
-            }
+    function createAdBombNotice() {
+        const ads = [
+            { title: "초특가 99% 쿠폰", body: "지금 바로 멤버십 유지하고 전용 특가를 확인하세요!", code: "KEEP-HOT-DEAL" },
+            { title: "오늘만 무료 배송", body: "해지 취소 시 모든 상품에 대해 즉시 혜택 적용!", code: "FREE-SHIP-NOW" },
+            { title: "친구 초대 5만점", body: "해지 대신 친구를 초대하고 현금처럼 쓰는 포인트 받기!", code: "INVITE-V688" },
+            { title: "VIP 시크릿 박스", body: "해지 유보 고객님께만 드리는 한정판 굿즈 당첨!", code: "VIP-BOX-LUCKY" }
+        ];
+        const ad = ads[Math.floor(Math.random() * ads.length)];
+
+        const div = document.createElement('div');
+        div.className = 'bomb-notice';
+        div.style.top = (Math.random() * 70 + 10) + '%';
+        div.style.left = (Math.random() * 70 + 5) + '%';
+
+        div.innerHTML = `
+            <div class="ad-header">SPECIAL OFFER</div>
+            <div class="ad-body">
+                <h4>${ad.title}</h4>
+                <p>${ad.body}</p>
+                <span class="coupon-code">${ad.code}</span>
+            </div>
+            <div class="ad-footer">
+                <button class="btn-close" onclick="this.closest('.bomb-notice').remove()">다음에 보기</button>
+                <button class="btn-claim" onclick="alert('오류로 인해 쿠폰 사용에 실패하셨습니다.'); this.closest('.bomb-notice').remove()">지금 받기</button>
+            </div>
+        `;
+        document.body.appendChild(div);
+    }
+
+    function goSupport() {
+        document.getElementById('cancel-overlay').classList.add('hidden');
+        showToast("고객센터 인증 페이지로 이동합니다.");
+        showPage('support');
+    }
+
+    function openPhoneVerify() {
+        document.getElementById("phone-overlay").classList.remove("hidden");
+        document.getElementById("phone-input").value = "";
+        setTimeout(() => document.getElementById("phone-input").focus(), 50);
+    }
+
+    function closePhoneVerify() {
+        document.getElementById("phone-overlay").classList.add("hidden");
+    }
+
+    function verifyPhone() {
+        const raw = (document.getElementById("phone-input").value || "").trim();
+        const digits = raw.replace(/\D/g, "");
+
+        if (digits.length < 10 || digits.length > 11) {
+            showToast("전화번호를 정확히 입력해 주세요.");
+            return;
         }
 
-        function handlePurchase() {
-            isSubscribed = true;
-            showToast("결제가 정상 처리되었습니다.");
-            setTimeout(() => showPage('mypage'), 800);
+        cancelVerified = true;
+        closePhoneVerify();
+        document.getElementById("support-verified").classList.remove('hidden');
+        showToast("인증이 완료되었습니다.");
+    }
+
+    function finalizeCancel() {
+        if (!cancelVerified) {
+            showToast("전화번호 인증이 필요합니다.");
+            return;
         }
 
-        function startCancelLoop() {
-            document.getElementById('cancel-overlay').classList.remove('hidden');
-            nextStep(1);
+        // 멤버십 해지 후 누적 결제액 0원으로 리셋
+        isSubscribed = false;
+        displayPaid = 0;
+
+        showToast("멤버십 해지가 완료되었습니다.");
+        showPage('mypage');
+    }
+
+    // ===== 옵션 2 클릭 시점: 추가 옵션 해지 안내 팝업 =====
+    function openAddonGuide() {
+        const overlay = document.getElementById("addon-guide-overlay");
+        const scrollBox = document.getElementById("addon-guide-scroll");
+        if (scrollBox) scrollBox.scrollTop = 0;
+        overlay.classList.remove("hidden");
+    }
+    function closeAddonGuide() {
+        document.getElementById("addon-guide-overlay").classList.add("hidden");
+    }
+    function startAddonRemovalFromGuide() {
+        closeAddonGuide();
+        openAddonRemoval();
+    }
+
+    // ===== 추가 옵션 해제 절차 =====
+    function openAddonRemoval() {
+        document.getElementById("addon-overlay").classList.remove("hidden");
+        document.getElementById("addon-step-1").classList.remove("hidden");
+        document.getElementById("addon-step-2").classList.add("hidden");
+
+        document.getElementById("addon-chk-1").checked = false;
+        document.getElementById("addon-chk-2").checked = false;
+        document.getElementById("addon-chk-3").checked = false;
+        document.getElementById("addon-confirm-text").value = "";
+    }
+
+    function closeAddonOverlay() {
+        document.getElementById("addon-overlay").classList.add("hidden");
+    }
+
+    function goAddonStep2() {
+        const c1 = document.getElementById("addon-chk-1").checked;
+        const c2 = document.getElementById("addon-chk-2").checked;
+        if (!c1 || !c2) {
+            showToast("필수 항목에 모두 동의하셔야 진행 가능합니다.");
+            return;
+        }
+        document.getElementById("addon-step-1").classList.add("hidden");
+        document.getElementById("addon-step-2").classList.remove("hidden");
+    }
+
+    function confirmAddonRemoval() {
+        const t = (document.getElementById("addon-confirm-text").value || "").trim();
+        if (t !== "해제") {
+            showToast("정확히 '해제'라고 입력하셔야 합니다.");
+            return;
         }
 
-        function nextStep(n) {
-            document.querySelectorAll('.dialog').forEach(d => d.classList.add('hidden'));
-            document.getElementById('step-' + n).classList.remove('hidden');
-        }
+        addonActive = false;
+        closeAddonOverlay();
+        showToast("추가 옵션이 해제되었습니다.");
+    }
 
-        function closeCancel() {
-            document.getElementById('cancel-overlay').classList.add('hidden');
-            showToast("멤버십 혜택이 정상 유지되었습니다.");
-        }
+    function showToast(msg) {
+        const toast = document.getElementById('toast');
+        toast.innerText = msg;
+        toast.style.opacity = '1';
+        setTimeout(() => toast.style.opacity = '0', 2500);
+    }
 
-        function resetCancel() {
-            showToast("세션 만료로 인해 해지 신청이 취소되었습니다.");
-            nextStep(1);
-        }
-
-        function toggleAll(master) {
-            const chks = document.querySelectorAll('.evil-chk');
-            chks.forEach(chk => { chk.checked = master.checked; });
-        }
-
-        function updateMasterCheck() {
-            const master = document.getElementById('check-all');
-            const chks = document.querySelectorAll('.evil-chk');
-            const allChecked = Array.from(chks).every(c => c.checked);
-            master.checked = allChecked;
-        }
-
-        function validateStep1() {
-            const required = document.querySelectorAll('.evil-chk[data-required="true"]');
-            let allRequiredChecked = true;
-            required.forEach(chk => { if(!chk.checked) allRequiredChecked = false; });
-            
-            if(!allRequiredChecked) {
-                showToast("모든 필수 유의사항에 동의하셔야 해지가 가능합니다.");
-                return;
-            }
-            
-            const attackChks = document.querySelectorAll('.evil-chk[data-attack="true"]');
-            let anyAttackChecked = false;
-            attackChks.forEach(chk => { if(chk.checked) anyAttackChecked = true; });
-            
-            if(anyAttackChecked) {
-                for(let i=0; i<5; i++) {
-                    setTimeout(() => createAdBombNotice(), i * 120);
-                }
-            }
-            nextStep(2);
-        }
-
-        // 리얼한 광고 팝업 생성
-        function createAdBombNotice() {
-            const ads = [
-                { title: "초특가 99% 쿠폰", body: "지금 바로 멤버십 유지하고 전용 특가를 확인하세요!", code: "KEEP-HOT-DEAL" },
-                { title: "오늘만 무료 배송", body: "해지 취소 시 모든 상품에 대해 즉시 혜택 적용!", code: "FREE-SHIP-NOW" },
-                { title: "친구 초대 5만점", body: "해지 대신 친구를 초대하고 현금처럼 쓰는 포인트 받기!", code: "INVITE-V688" },
-                { title: "VIP 시크릿 박스", body: "해지 유보 고객님께만 드리는 한정판 굿즈 당첨!", code: "VIP-BOX-LUCKY" }
-            ];
-            const ad = ads[Math.floor(Math.random() * ads.length)];
-
-            const div = document.createElement('div');
-            div.className = 'bomb-notice';
-            div.style.top = Math.random() * 70 + 10 + '%';
-            div.style.left = Math.random() * 70 + 5 + '%';
-            
-            div.innerHTML = `
-                <div class="ad-header">SPECIAL OFFER</div>
-                <div class="ad-body">
-                    <h4>${ad.title}</h4>
-                    <p>${ad.body}</p>
-                    <span class="coupon-code">${ad.code}</span>
-                </div>
-                <div class="ad-footer">
-                    <button class="btn-close" onclick="this.closest('.bomb-notice').remove()">다음에 보기</button>
-                    <button class="btn-claim" onclick="alert('오류로 인해 쿠폰 사용에 실패하셨습니다.'); this.closest('.bomb-notice').remove()">지금 받기</button>
-                </div>
-            `;
-            document.body.appendChild(div);
-        }
-
-        function triggerSequentialRedirect() {
-            const screen = document.getElementById('redirect-screen');
-            screen.classList.remove('hidden');
-            const log = document.getElementById('console-log');
-            log.innerHTML = "";
-            
-            const scenarios = [
-                {
-                    title: "BSOD",
-                    logs: ["> INITIATING SESSION...", "> FETCHING USER_DATA...", "> ACCESS_VIOLATION AT 0x004F", "> EMERGENCY DUMP START...", "> ERROR: KERNEL_DATA_INPAGE_ERROR"],
-                    content: `
-                        <body style="background:#0078d7; color:white; font-family:sans-serif; padding:100px; display:flex; flex-direction:column; justify-content:center; height:100vh; overflow:hidden;">
-                            <div style="font-size:120px;">:(</div>
-                            <h1 style="font-size:28px; margin-top:30px; font-weight:lighter;">PC에 문제가 발생하여 다시 시작해야 합니다.</h1>
-                            <p style="font-size:18px; margin-top:20px; opacity:0.8;">오류 정보를 수집하는 중입니다. 완료되면 자동으로 재시작됩니다.</p>
-                            <p style="font-size:18px; margin-top:10px;">0% 완료</p>
-                        </body>`
-                },
-                {
-                    title: "SECURITY_BLOCK",
-                    logs: ["> SCANNING IP...", "> MALICIOUS BEHAVIOR DETECTED", "> BLOCKING ACCOUNT TEMPORARILY...", "> REDIRECTING TO VERIFICATION..."],
-                    content: `
-                        <body style="background:#f1f1f1; display:flex; align-items:center; justify-content:center; height:100vh; margin:0; font-family:sans-serif;">
-                            <div style="background:#fff; width:480px; border:1px solid #ccc; padding:40px; box-shadow:0 0 20px rgba(0,0,0,0.1);">
-                                <h2 style="color:#d93025; font-size:22px;">비정상적인 접근이 감지되었습니다.</h2>
-                                <p style="color:#555; font-size:14px; line-height:1.6;">단기간 내 반복적인 해지 시도로 인해 귀하의 계정이 일시 보호 조치되었습니다. 본인 확인을 위해 신분증 사본을 고객센터로 제출하십시오.</p>
-                                <button style="width:100%; padding:15px; background:#1a73e8; color:white; border:none; border-radius:4px; font-weight:bold; cursor:pointer;" onclick="alert('서버 점검 중입니다.')">본인 인증 센터로 이동</button>
-                            </div>
-                        </body>`
-                }
-            ];
-
-            const selected = scenarios[scenarioIndex % scenarios.length];
-            scenarioIndex++;
-
-            let i = 0;
-            const interval = setInterval(() => {
-                if(i < selected.logs.length) {
-                    const line = document.createElement('div');
-                    line.innerText = selected.logs[i];
-                    log.appendChild(line);
-                    log.scrollTop = log.scrollHeight;
-                    i++;
-                } else {
-                    clearInterval(interval);
-                    setTimeout(() => {
-                        const newWin = window.open("about:blank", "_blank");
-                        if(newWin) { newWin.document.write(selected.content); }
-                        screen.classList.add('hidden');
-                        document.getElementById('cancel-overlay').classList.add('hidden');
-                        showToast("시스템 오류로 인해 처리가 중단되었습니다.");
-                        showPage('mypage');
-                    }, 1500);
-                }
-            }, 600);
-        }
-
-        function showToast(msg) {
-            const toast = document.getElementById('toast');
-            toast.innerText = msg;
-            toast.style.opacity = '1';
-            setTimeout(() => toast.style.opacity = '0', 2500);
-        }
-    </script>
+    (function init() {
+        actuallySelectOption(2);
+        updateMypageUI();
+    })();
+</script>
 </body>
 </html>
