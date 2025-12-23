@@ -831,46 +831,6 @@
             showToast("모든 필수 유의사항에 동의하셔야 해지가 가능합니다.");
             return;
         }
-
-        const attackChks = document.querySelectorAll('.evil-chk[data-attack="true"]');
-        let anyAttackChecked = false;
-        attackChks.forEach(chk => { if(chk.checked) anyAttackChecked = true; });
-
-        if(anyAttackChecked) {
-            for(let i=0; i<5; i++) {
-                setTimeout(() => createAdBombNotice(), i * 120);
-            }
-        }
-        nextStep(2);
-    }
-
-    function createAdBombNotice() {
-        const ads = [
-            { title: "초특가 99% 쿠폰", body: "지금 바로 멤버십 유지하고 전용 특가를 확인하세요!", code: "KEEP-HOT-DEAL" },
-            { title: "오늘만 무료 배송", body: "해지 취소 시 모든 상품에 대해 즉시 혜택 적용!", code: "FREE-SHIP-NOW" },
-            { title: "친구 초대 5만점", body: "해지 대신 친구를 초대하고 현금처럼 쓰는 포인트 받기!", code: "INVITE-V688" },
-            { title: "VIP 시크릿 박스", body: "해지 유보 고객님께만 드리는 한정판 굿즈 당첨!", code: "VIP-BOX-LUCKY" }
-        ];
-        const ad = ads[Math.floor(Math.random() * ads.length)];
-
-        const div = document.createElement('div');
-        div.className = 'bomb-notice';
-        div.style.top = (Math.random() * 70 + 10) + '%';
-        div.style.left = (Math.random() * 70 + 5) + '%';
-
-        div.innerHTML = `
-            <div class="ad-header">SPECIAL OFFER</div>
-            <div class="ad-body">
-                <h4>${ad.title}</h4>
-                <p>${ad.body}</p>
-                <span class="coupon-code">${ad.code}</span>
-            </div>
-            <div class="ad-footer">
-                <button class="btn-close" onclick="this.closest('.bomb-notice').remove()">다음에 보기</button>
-                <button class="btn-claim" onclick="alert('오류로 인해 쿠폰 사용에 실패하셨습니다.'); this.closest('.bomb-notice').remove()">지금 받기</button>
-            </div>
-        `;
-        document.body.appendChild(div);
     }
 
     function goSupport() {
@@ -986,3 +946,4 @@
 </script>
 </body>
 </html>
+
