@@ -740,14 +740,12 @@
         document.getElementById("upsell-overlay").classList.add("hidden");
     }
 
-    // ✅ [수정] 업셀에서 "정기 구독으로 변경하기"를 눌렀을 때는
-    // 추가 옵션 안내창(openAddonGuide)을 띄우지 않음
     function confirmUpsellToSub() {
         closeUpsellOverlay();
         addonActive = true;
         actuallySelectOption(2);
         showToast("정기 구독(베스트) 옵션으로 변경되었습니다.");
-        // openAddonGuide();  // 제거
+        // openAddonGuide();  // 유지하지 않음
     }
 
     function confirmUpsellKeepCurrent() {
@@ -831,6 +829,9 @@
             showToast("모든 필수 유의사항에 동의하셔야 해지가 가능합니다.");
             return;
         }
+
+        // ✅ [수정] 선택 옵션(attack) 체크 시 뜨던 쿠폰 팝업 기능 제거
+        nextStep(2);
     }
 
     function goSupport() {
@@ -946,4 +947,4 @@
 </script>
 </body>
 </html>
-
+'
